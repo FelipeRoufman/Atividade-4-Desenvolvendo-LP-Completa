@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- so site font awesome na versao 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- aqui é o link do Jquery CDN para usar o negocio do menu responsivo que abre quando o ususario clica nele -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- aqui tem uma API para fazer o scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("FX6Thf8ZhJ_44PwtB");
+        })();
+    </script>
+
+    <title>Atividade_4</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <!-- aqui eu fui no font awesome search para pegar um icone -->
+            <img src="components/images/logo.png" alt="logo">
+
+            <ul id="nav_list">
+                <li class="nav_item active">
+
+                    <!-- esse #home significa que quando for clicado ele vai para o conto com ID home -->
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+
+                <li class="nav_item">
+                    <a href="#menu" class="nav-link">Menu</a>
+                </li>
+
+                <li class="nav_item">
+                    <a href="#testimonials" class="nav-link">Avaliaçoes</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                <a href="#contact" style="color: inherit; text-decoration: none;">Peça Aqui</a>
+            </button>
+
+            <!-- aqui é o botao quando o cara entrar por celular ele vai ficar
+             escondido no JS -->
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav_item">
+
+                    <!-- esse #home significa que quando for clicado ele vai para o conto com ID home -->
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+
+                <li class="nav_item">
+                    <a href="#menu" class="nav-link">Menu</a>
+                </li>
+
+                <li class="nav_item">
+                    <a href="#testimonials" class="nav-link">Avaliaçoes</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Peça Aqui
+            </button>
+
+        </div>
+
+    </header>
+
+    <main id="content">
+        <section id="home">
+            <div class="shape"></div>
+            <div id="cta">
+                <h1 class="title">
+                    Onde a <span>fofura</span> encontra a <span>moda</span>!
+                </h1>
+
+                <p class="description">
+                    Estilo e conforto para os primeiros passos do seu bebê!
+
+                <div id="cta_buttons">
+
+                    <a href="#menu" class="btn-default">
+                        Ver Conjuntos
+                    </a>
+
+                    <a href="tel:+5555555555" id="phone_button">
+                        <button class="btn-default">
+                            <i class="fa-solid fa-phone"></i>
+
+                        </button>
+                        +55 085 98975-2925
+                    </a>
+                </div>
+
+                <div class="social-media-buttons">
+                    <a href="">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="banner">
+                <img src="components/images/banner.jpg" alt="Banner">
+            </div>
+
+        </section>
+        <section id="carrosel_de_imagems"
+            style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+            <div class="img-slider">
+                <div class="slide active">
+                    <img src="components/images/slider1.jpg" alt="Foto de apresentaçao 1" class="carrosel-image">
+                    <div class="info">
+                        <h2>Elegancia</h2>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="components/images/slider2.jpg" alt="Foto de apresentaçao 2" class="carrosel-image">
+                    <div class="info">
+                        <h2>Diversao</h2>
+
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="components/images/slider3.jpg" alt="Foto de apresentaçao 3" class="carrosel-image">
+                    <div class="info">
+                        <h2>Beleza</h2>
+
+                    </div>
+                </div>
+                <div class="navigation">
+                    <div class="btn active"></div>
+                    <div class="btn"></div>
+                    <div class="btn"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2 class="section-title">Conjuntos</h2>
+            <h3 class="section-subtitle">Nossas Roupas Especiais</h3>
+
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="components/images/1.jpg" alt="roupa_1" class="dish-image">
+
+                    <h3 class="dish-title">
+                        Blusa Feminina para Bebê Bege
+                    </h3>
+
+                    <span class="dish-description">
+                        roupa confortável e 100% a base de algodão
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                        <span>(200+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$129,99</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="components/images/2.jpg" alt="roupa_2" class="dish-image">
+
+                    <h3 class="dish-title">
+                        Macacão Azul decorado Feminino para Bebês
+                    </h3>
+
+                    <span class="dish-description">
+                        perfeitamente ajustável  e confortável 
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(100+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$81,99</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="components/images/3.jpg" alt="roupa_3" class="dish-image">
+
+                    <h3 class="dish-title">
+                        Blusa Azul para Bebês
+                    </h3>
+
+                    <span class="dish-description">
+                        unisex e 100% a base de algodão 
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        
+                        <span>(100+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$20,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="components/images/4.jpg" alt="roupa_4" class="dish-image">
+
+                    <h3 class="dish-title">
+                        Moletom Branco Unisex para Bebês
+                    </h3>
+
+                    <span class="dish-description">
+                        perfeito para dias frios e extremamente confortável
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(800+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$40,00</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section id="testimonials">
+            <img src="components/images/fotopredsfdf.jpg" alt="Foto de apresentaçao" id="testimonials_chef">
+
+            <div id="testimonials_content">
+
+                <h2 class="section-title">
+                    Depoimentos
+                </h2>
+
+                <h3 class="section-subtitle">
+                    O que nossos clientes dizem
+                </h3>
+
+                <div id="feedback">
+                    <div class="feedback">
+                        <img src="components/images/tes1.png" alt="avatar" class="feedback-avatar">
+
+                        <div class="feedback-content">
+                            <p>
+                                Ana
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                Minha filha adorou!!!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="feedback">
+                    <div class="feedback">
+                        <img src="components/images/tes2.png" alt="avatar" class="feedback-avatar">
+
+                        <div class="feedback-content">
+                            <p>
+                                Neto   
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                Bom e barato ai que é bom
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-default">
+                    ver mais avaliaçoes
+                </button>
+            </div>
+        </section>
+
+
+        <section id="contact">
+            <h2 class="section-title">Contato</h2>
+            <h3 class="section-subtitle">Entre em contato conosco</h3>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn-default">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <img src="components/images/wave.svg" alt="wave">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy; 2021 Food
+            </span>
+
+            <div id="social-media-buttons">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

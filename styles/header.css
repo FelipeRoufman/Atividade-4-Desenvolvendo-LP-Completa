@@ -1,0 +1,90 @@
+header{
+    width: 100%;
+    /* esse 8% é para ele ficar responsivo */
+    padding: 28px 8%;
+
+    /*para deixar ele parado */
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primary-2);
+    z-index: 3;
+}
+
+#navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav_logo{
+    font-size: 24px;
+    color: rgb(255, 232, 104);
+}
+
+#nav_list{
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+/* aqui vai ser que os <a> que tem a classe nav-link vao ser mudados */
+.nav_item a {
+    text-decoration: none;
+    color: var(--color-primary-3);
+    font-weight: 600;
+}
+
+/* aqui vai ser que os <a> que tem a classe nav-link vao adicionar mudanças 
+ou substituir elas quando ele ganhar a classe active */
+.nav_item.active a {
+    color: #120d00;
+    border-bottom: 2px solid var(--color-primary-4);
+}
+
+#mobile_btn{
+    display: none;
+}
+
+#mobile_menu{
+    display: none;
+}
+
+/* aqui vai ser a responsividade do Header */
+@media screen and (max-width: 1170px){
+   
+    /* aqui vai ser os botões normais do header sumindo para ficar ok lá em cima */
+    #nav_list,
+    #navbar .btn-default{
+        display: none;
+    }
+    
+    /* aqui vai ser o botão de mobile aparecendo */
+    #mobile_btn{
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* agora para fazer o menu aparecer quando o usuário clicar nele, temos que 
+    usar uma biblioteca externa, no caso vou usar a jQuery */
+    #mobile_menu.active{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile_nav_list{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0;
+    }
+
+    #mobile_nav_list .nav_item{
+        list-style: none;
+        text-align: center;
+    }
+}
